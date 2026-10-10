@@ -1,0 +1,1 @@
+{"action": "create", "reason": "Service modules each called axios.create with no auth; attaching a Bearer token needed one shared client plus one interceptor, and the login store needed to persist the token. This is the repeatable wiring for this Vue app.", "evidence": "references/evidence-0c8d219a.md"}

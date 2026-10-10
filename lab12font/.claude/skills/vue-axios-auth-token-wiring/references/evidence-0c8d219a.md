@@ -1,0 +1,3 @@
+{"type":"tool_result","content":"import axios from 'axios'\nimport type { Event } from '@/types'\n\nconst apiClient = axios.create({\n  baseURL: import.meta.env.VITE_BACKEND_URL,\n  withCredentials: false,"}
+{"type":"tool_result","content":"          this.[REDACTED:[REDACTED:secret:api_key_assignment]]\n          localStorage.setItem('access_token', this.token as string)\n          return response"}
+{"type":"tool_use","input":{"command":"...    console.log('token', token)\n    if (token) {\n      request.headers['Authorization'] = `Bearer ${token}`\n    }"}}
