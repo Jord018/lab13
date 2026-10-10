@@ -27,7 +27,10 @@ public class SecurityConfiguration {
     });
     http
             .csrf((crsf) -> crsf.disable())
-            .authorizeHttpRequests(a -> a.anyRequest().authenticated()) // TEMP for 1.4, replaced in 2.3
+            .authorizeHttpRequests((authorize) -> {
+              authorize.requestMatchers("/api/v1/auth/**").permitAll()
+                      .anyRequest().authenticated();
+            })
 
 
             .sessionManagement((session) ->{
