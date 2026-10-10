@@ -21,3 +21,11 @@ spring:
         - local
 server:
     port: 8081
+
+application:
+  security:
+    jwt:
+      secret-key: 65f4d76364549200cd29648c868a2d0ae9825379afc33f10dab668c42e63bdcc661817b1b6de6610e7234a511c00bdad807e524ce7a9d6f5f2fb901a70c57de3
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
