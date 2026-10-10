@@ -9,6 +9,7 @@ import org.mapstruct.factory.Mappers;
 import com.example.demo.entity.Event;
 import com.example.demo.entity.EventDTO;
 import com.example.demo.entity.Organizer;
+import com.example.demo.entity.OrganizerAuthDTO;
 import com.example.demo.entity.OrganizerDTO;
 import com.example.demo.entity.Participant;
 import com.example.demo.entity.ParticipantDTO;
@@ -28,6 +29,8 @@ public interface LabMapper {
 
     OrganizerDTO getOrganizerDTO(Organizer organizer);
     List<OrganizerDTO> getOrganizerDTO(List<Organizer> organizers);
+    @Mapping(target = "roles", source = "user.roles")
+    OrganizerAuthDTO getOrganizerAuthDTO(Organizer organizer);
     ParticipantEventsDTO getParticipantEventsDTO(Participant participant);
     List<ParticipantEventsDTO> getParticipantEventsDTO(List<Participant> participants);
 }
