@@ -18,6 +18,7 @@ import OrganizerService from '@/services/OrganizerService'
 import { useOrganizerStore } from '@/stores/organizer'
 import { useEventStore } from '@/stores/event'
 import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/RegisterView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -83,6 +84,11 @@ const router = createRouter({
       path: '/login',
       name: 'login-view',
       component: LoginView
+    },
+    {
+      path: '/register',
+      name: 'register-view',
+      component: RegisterView
     },
     {
       path: '/event/:id',

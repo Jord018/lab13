@@ -2,6 +2,8 @@ package se331.lab.security.auth;
 
 
 
+import com.example.demo.entity.Organizer;
+import com.example.demo.repository.OrganizerRepository;
 import com.example.demo.util.LabMapper;
 import tools.jackson.databind.json.JsonMapper;
 import jakarta.servlet.http.HttpServletRequest;
@@ -32,6 +34,7 @@ public class AuthenticationService {
   private final JwtService jwtService;
   private final AuthenticationManager authenticationManager;
   private final JsonMapper jsonMapper;
+  private final OrganizerRepository organizerRepository;
 
   public AuthenticationResponse register(RegisterRequest request) {
     User user = User.builder()
@@ -44,6 +47,11 @@ public class AuthenticationService {
             .enabled(true)
             .build();
     var savedUser = repository.save(user);
+    // login needs an Organizer linked to the user to show the name and roles
+    organizerRepository.save(Organizer.builder()
+            .name(request.getFirstname() + " " + request.getLastname())
+            .user(savedUser)
+            .build());
     var jwtToken = jwtService.generateToken(user);
     var refreshToken = jwtService.generateRefreshToken(user);
     saveUserToken(savedUser, jwtToken);
