@@ -17,6 +17,7 @@ import OrganizerDetailView from '@/views/organizer/DetailView.vue'
 import OrganizerService from '@/services/OrganizerService'
 import { useOrganizerStore } from '@/stores/organizer'
 import { useEventStore } from '@/stores/event'
+import LoginView from '@/views/LoginView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -77,6 +78,11 @@ const router = createRouter({
           component: OrganizerDetailView,
         },
       ],
+    },
+    {
+      path: '/login',
+      name: 'login-view',
+      component: LoginView
     },
     {
       path: '/event/:id',
