@@ -1,0 +1,23 @@
+
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/selabdb
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  mvc:
+    problemdetails:
+      enabled: true
+  profiles:
+    active: 
+        - db
+        - local
+server:
+    port: 8081

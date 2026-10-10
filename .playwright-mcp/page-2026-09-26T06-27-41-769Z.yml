@@ -1,0 +1,29 @@
+- generic [active] [ref=f15e1]:
+  - generic [ref=f15e3]:
+    - banner [ref=f15e4]:
+      - navigation [ref=f15e6]:
+        - link "Event" [ref=f15e7] [cursor=pointer]:
+          - /url: /
+        - text: "|"
+        - link "About" [ref=f15e8] [cursor=pointer]:
+          - /url: /about
+        - text: "|"
+        - link "New Event" [ref=f15e9] [cursor=pointer]:
+          - /url: /add-event
+        - text: "|"
+        - link "Add Organizer" [ref=f15e10] [cursor=pointer]:
+          - /url: /add-organizer
+    - generic [ref=f15e11]:
+      - heading "Create an Organizer" [level=1] [ref=f15e12]
+      - generic [ref=f15e13]:
+        - heading "Organization Info" [level=3] [ref=f15e14]
+        - generic [ref=f15e15]: Organization Name
+        - textbox "Organization Name" [ref=f15e16]
+        - generic [ref=f15e17]: Address
+        - textbox "Address" [ref=f15e18]
+        - heading "The image of the Organizer" [level=3] [ref=f15e19]
+        - generic [ref=f15e30] [cursor=pointer]
+        - button "Submit" [ref=f15e34]
+  - generic [ref=f15e35]:
+    - generic "Toggle devtools panel" [ref=f15e36] [cursor=pointer]
+    - generic "Toggle Component Inspector" [ref=f15e42] [cursor=pointer]

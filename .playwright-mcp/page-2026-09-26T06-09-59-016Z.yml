@@ -1,0 +1,399 @@
+- generic [active] [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - button "ไปที่ไดรฟ์" [ref=f4e4] [cursor=pointer]
+    - generic [ref=f4e8]: 11. Cloud Service-supabase
+  - generic [ref=f4e13]:
+    - paragraph [ref=f4e14]:
+      - generic [ref=f4e15]:
+        - img "CmuLogo"
+    - paragraph [ref=f4e16]: CHIANG MAI UNIVERSITY
+    - paragraph [ref=f4e17]: Bachelor of Science (Software Engineering)
+    - paragraph [ref=f4e18]: College of Arts, Media and Technology
+    - paragraph [ref=f4e19]: 1st Semester / Academic Year 2026
+    - paragraph [ref=f4e20]: SE 331 Component Based Software Development
+    - paragraph [ref=f4e21]
+    - paragraph [ref=f4e23]: Using Cloud services
+    - paragraph [ref=f4e24]: Name …………………..……………. ID ……………………
+    - paragraph [ref=f4e25]: Objective In this session, you may try to upload the file to Supabase Storage
+    - paragraph [ref=f4e26]: Suggestion you should read the instructions step by step. Please try to answer question by question without skipping some questions which you think it is extremely difficult.
+    - paragraph [ref=f4e27]: Hint The symbol + and – in front of the source code is to show that you have to remove the source code and add the source code only. There are not the part of the source code
+    - paragraph [ref=f4e28]
+    - list [ref=f4e29]:
+      - listitem [ref=f4e30]:
+        - text: To use the Supabase Storage, open
+        - link "https://supabase.com/" [ref=f4e32] [cursor=pointer]:
+          - /url: https://www.google.com/url?q=https://supabase.com/&sa=D&source=editors&ust=1790406597668953&usg=AOvVaw1oYeR8bgLItpwWfgdkvges
+        - text: sign up and then open the project by click start your project
+    - paragraph [ref=f4e33]
+    - paragraph [ref=f4e35]
+    - list [ref=f4e36]:
+      - listitem [ref=f4e37]: Create new project, you input any name you want
+    - paragraph [ref=f4e38]
+    - paragraph [ref=f4e40]
+    - paragraph [ref=f4e41]: Note that you should select region near to your location.
+    - list [ref=f4e42]:
+      - listitem [ref=f4e43]: Select the project you have selected
+    - paragraph [ref=f4e44]
+    - list [ref=f4e46]:
+      - listitem [ref=f4e47]: Select storage to set up the storage
+    - paragraph [ref=f4e48]
+    - paragraph [ref=f4e49]
+    - list [ref=f4e51]:
+      - listitem [ref=f4e52]: Click new bucket to create the new bucket
+    - paragraph [ref=f4e53]
+    - list [ref=f4e55]:
+      - listitem [ref=f4e56]: Create a new bucket and select it to be public bucket
+    - paragraph [ref=f4e57]
+    - paragraph [ref=f4e59]: Please keep the bucket name, as we will need to use it later
+    - list [ref=f4e60]:
+      - listitem [ref=f4e61]: After create the bucket select setting. You should enter the setting page. or you may go to the storage menu, then open the S3 sections
+    - paragraph [ref=f4e62]
+    - paragraph [ref=f4e64]: Copy the Endpoint value, and regions and keep it with you
+    - list [ref=f4e65]:
+      - listitem [ref=f4e66]: Click New Access key to get the access key. Copy the Access key, and the secret key for the further work.
+      - listitem [ref=f4e67]: Now you should have Endpoint, regions, Access Key, Secret Key, and the bucket name value.
+    - paragraph [ref=f4e68]: Show all the required information to the staff.
+    - paragraph [ref=f4e69]
+    - list [ref=f4e70]:
+      - listitem [ref=f4e71]: Search the maven repository for Amazon S3 client component, add the dependency to your pom.xml
+    - list [ref=f4e72]:
+      - listitem [ref=f4e73]: Create the applicaton-local.yml, add the setting for the supabase setting here.
+    - paragraph [ref=f4e74]: "+supabase:"
+    - paragraph [ref=f4e75]: "+ storage:"
+    - paragraph [ref=f4e76]: "+ endpoint: <your-endpoint>"
+    - paragraph [ref=f4e77]: "+ bucket: <your-bucket-name>"
+    - paragraph [ref=f4e78]: "+ region: <your-region>"
+    - paragraph [ref=f4e79]: "+ accessKey: <your-access-key>"
+    - paragraph [ref=f4e80]: "+ secretKey: <your-access-secret>"
+    - paragraph [ref=f4e81]
+    - paragraph [ref=f4e82]: then in the application.yml add the spring profile active to local
+    - paragraph [ref=f4e83]: "profiles:"
+    - paragraph [ref=f4e84]: "active:"
+    - paragraph [ref=f4e85]: "- db"
+    - paragraph [ref=f4e86]: + - local
+    - paragraph [ref=f4e87]: finally, in the .gitignore add the application-local.yml to it. this will protected your credential to put only in your local computer
+    - paragraph [ref=f4e88]: +application-local.yml
+    - paragraph [ref=f4e89]
+    - paragraph [ref=f4e90]
+    - list [ref=f4e91]:
+      - listitem [ref=f4e92]: In util package, create S3Config class to create S3Client as given
+    - paragraph [ref=f4e93]: +@Configuration
+    - paragraph [ref=f4e94]: "+public class S3Config {"
+    - paragraph [ref=f4e95]: + // Access key id will be read from the application.yml file during the application intialization.
+    - paragraph [ref=f4e96]: "+ @Value(\"${supabase.storage.accessKey}\")"
+    - paragraph [ref=f4e97]: + private String accessKeyId;
+    - paragraph [ref=f4e98]: + // Secret access key will be read from the application.properties file during the application intialization.
+    - paragraph [ref=f4e99]: "+ @Value(\"${supabase.storage.secretKey}\")"
+    - paragraph [ref=f4e100]: + private String secretAccessKey;
+    - paragraph [ref=f4e101]: + // Region will be read from the application.properties file during the application intialization.
+    - paragraph [ref=f4e102]: "+ @Value(\"${supabase.storage.region}\")"
+    - paragraph [ref=f4e103]: + private String region;
+    - paragraph [ref=f4e104]: "+ @Value(\"${supabase.storage.endpoint}\")"
+    - paragraph [ref=f4e105]: + private String endpoint;
+    - paragraph [ref=f4e106]: +
+    - paragraph [ref=f4e107]: + @Bean
+    - paragraph [ref=f4e108]: "+ public S3Client getAmazonS3Cient() {"
+    - paragraph [ref=f4e109]: + AwsBasicCredentials credentials = AwsBasicCredentials.create(accessKeyId, secretAccessKey);
+    - paragraph [ref=f4e110]: + return S3Client.builder()
+    - paragraph [ref=f4e111]: + .credentialsProvider(() -> credentials)
+    - paragraph [ref=f4e112]: + .region(software.amazon.awssdk.regions.Region.of(region))
+    - paragraph [ref=f4e113]: + .endpointOverride(java.net.URI.create(endpoint))
+    - paragraph [ref=f4e114]: + .forcePathStyle(true)
+    - paragraph [ref=f4e115]: + .build();
+    - paragraph [ref=f4e116]: +
+    - paragraph [ref=f4e117]: "+ }"
+    - paragraph [ref=f4e118]: "+}"
+    - paragraph [ref=f4e119]
+    - paragraph [ref=f4e120]: Then create the SupabaseService class in the util package to upload the file to the server
+    - paragraph [ref=f4e121]
+    - paragraph [ref=f4e122]: +@Service
+    - paragraph [ref=f4e123]: +@RequiredArgsConstructor
+    - paragraph [ref=f4e124]: "+public class SupabaseStorageService {"
+    - paragraph [ref=f4e125]: "+ @Value(\"${supabase.storage.bucket}\")"
+    - paragraph [ref=f4e126]: + String bucketName;
+    - paragraph [ref=f4e127]: "+ @Value(\"${supabase.storage.endpoint_output}\")"
+    - paragraph [ref=f4e128]: + String outputUrl;
+    - paragraph [ref=f4e129]: + DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddmmssSSS");
+    - paragraph [ref=f4e130]: + private final S3Client s3Client;
+    - paragraph [ref=f4e131]: + private final S3Presigner s3Presigner;
+    - paragraph [ref=f4e132]: "+ public String uploadFile(MultipartFile file) throws IOException {"
+    - paragraph [ref=f4e133]: +
+    - paragraph [ref=f4e134]: + Path tempFile = Files.createTempFile("upload-", file.getOriginalFilename());
+    - paragraph [ref=f4e135]: + Files.copy(file.getInputStream(), tempFile, StandardCopyOption.REPLACE_EXISTING);
+    - paragraph [ref=f4e136]: +
+    - paragraph [ref=f4e137]: + String saltFileName = LocalDateTime.now().format(formatter) + "-" + file.getOriginalFilename();
+    - paragraph [ref=f4e138]: +
+    - paragraph [ref=f4e139]: + PutObjectRequest putObjectRequest = PutObjectRequest.builder()
+    - paragraph [ref=f4e140]: + .bucket(bucketName)
+    - paragraph [ref=f4e141]: + .key(saltFileName)
+    - paragraph [ref=f4e142]: + .build();
+    - paragraph [ref=f4e143]: +
+    - paragraph [ref=f4e144]: + s3Client.putObject(putObjectRequest, tempFile);
+    - paragraph [ref=f4e145]: +
+    - paragraph [ref=f4e146]: +
+    - paragraph [ref=f4e147]
+    - paragraph [ref=f4e148]: + String key = String.format("%s", saltFileName);
+    - paragraph [ref=f4e149]: +
+    - paragraph [ref=f4e150]: + Files.delete(tempFile);
+    - paragraph [ref=f4e151]: + return key;
+    - paragraph [ref=f4e152]: "+ }"
+    - paragraph [ref=f4e153]: "+public String getPresignedUrl(String keyName) {"
+    - paragraph [ref=f4e154]: + return getPresignedUrl(keyName, Duration.ofMinutes(60));
+    - paragraph [ref=f4e155]: "+}"
+    - paragraph [ref=f4e156]
+    - paragraph [ref=f4e157]: "+public String getPresignedUrl(String keyName, Duration expiration) {"
+    - paragraph [ref=f4e158]: + GetObjectRequest getObjectRequest = GetObjectRequest.builder()
+    - paragraph [ref=f4e159]: + .bucket(bucketName)
+    - paragraph [ref=f4e160]: + .key(keyName)
+    - paragraph [ref=f4e161]: + .build();
+    - paragraph [ref=f4e162]: + GetObjectPresignRequest presignRequest = GetObjectPresignRequest.builder()
+    - paragraph [ref=f4e163]: + .signatureDuration(expiration)
+    - paragraph [ref=f4e164]: + .getObjectRequest(getObjectRequest)
+    - paragraph [ref=f4e165]: + .build();
+    - paragraph [ref=f4e166]: + return s3Presigner.presignGetObject(presignRequest).url().toString();
+    - paragraph [ref=f4e167]: "+}"
+    - paragraph [ref=f4e168]: +
+    - paragraph [ref=f4e169]: "+}"
+    - paragraph [ref=f4e170]
+    - list [ref=f4e171]:
+      - listitem [ref=f4e172]: Create the upload endpoint by creating the SupabaseController class in the controller package using the given code
+    - paragraph [ref=f4e173]
+    - paragraph [ref=f4e174]: +@Controller
+    - paragraph [ref=f4e175]: +@RequiredArgsConstructor
+    - paragraph [ref=f4e176]: "+public class SupabaseController {"
+    - paragraph [ref=f4e177]: + final SupabaseStorageService supabaseStorageService;
+    - paragraph [ref=f4e178]: +
+    - paragraph [ref=f4e179]: + @PostMapping("/uploadFile")
+    - paragraph [ref=f4e180]: "+ public ResponseEntity<String> uploadFile(@RequestParam(\"file\") MultipartFile file) {"
+    - paragraph [ref=f4e181]: "+ try {"
+    - paragraph [ref=f4e182]: +
+    - paragraph [ref=f4e183]: + String fileUrl = supabaseStorageService.uploadFile(file);
+    - paragraph [ref=f4e184]: + return ResponseEntity.ok(fileUrl);
+    - paragraph [ref=f4e185]: "+ } catch (Exception e) {"
+    - paragraph [ref=f4e186]: "+ return ResponseEntity.status(500).body(\"Error uploading file: \" + e.getMessage());"
+    - paragraph [ref=f4e187]: "+ }"
+    - paragraph [ref=f4e188]: "+ }"
+    - paragraph [ref=f4e189]: + @GetMapping("/presignedUrl")
+    - paragraph [ref=f4e190]: "+ public ResponseEntity<String> getPresignedUrl(@RequestParam(\"fileName\") String fileName) {"
+    - paragraph [ref=f4e191]: "+ try {"
+    - paragraph [ref=f4e192]: + String presignedUrl = supabaseStorageService.getPresignedUrl(fileName);
+    - paragraph [ref=f4e193]: + return ResponseEntity.ok(presignedUrl);
+    - paragraph [ref=f4e194]: "+ } catch (Exception e) {"
+    - paragraph [ref=f4e195]: "+ return ResponseEntity.status(500).body(\"Error generating presigned url: \" + e.getMessage());"
+    - paragraph [ref=f4e196]: "+ }"
+    - paragraph [ref=f4e197]: "+ }"
+    - paragraph [ref=f4e198]: +
+    - paragraph [ref=f4e199]: "+}"
+    - paragraph [ref=f4e200]
+    - list [ref=f4e201]:
+      - listitem [ref=f4e202]: Open the ApiDog, try to upload the file using the given command
+    - paragraph [ref=f4e203]
+    - paragraph [ref=f4e205]: You should upload the image, after you have uploaded the file, you will get the key name as the return value.
+    - paragraph [ref=f4e206]: call the getPresigned using the key you received to get the url
+    - paragraph [ref=f4e207]: Copy the return url, and paste it in the browser and show the image to the staff
+    - paragraph [ref=f4e208]: Note you may find the error saying that the size of the file exceeds the limit. Please update the application.yml for setting a new upload limit as given
+    - paragraph [ref=f4e209]
+    - paragraph [ref=f4e211]
+    - paragraph [ref=f4e212]
+    - list [ref=f4e213]:
+      - listitem [ref=f4e214]: Provide the code for uploading the images
+    - list [ref=f4e215]:
+      - listitem [ref=f4e216]:
+        - text: install the vue-media-upload component which you can find the details
+        - link "here" [ref=f4e218] [cursor=pointer]:
+          - /url: https://www.google.com/url?q=https://github.com/saimow/vue-media-upload&sa=D&source=editors&ust=1790406597679722&usg=AOvVaw2WpSYimNDY4n0dnPcaVJmY
+        - text: by running the following command in the root of the project
+    - paragraph [ref=f4e219]: npm i vue-media-upload --save
+    - paragraph [ref=f4e220]: you may see the demo by googling the vue-upload-drop-images
+    - list [ref=f4e221]:
+      - listitem [ref=f4e222]: Create the component to handle the vue-media-upload component so that we can add the component to our application easily. Create the ImageUpload.vue in the component folders
+    - paragraph [ref=f4e223]
+    - paragraph [ref=f4e224]: +<script setup lang="ts">
+    - paragraph [ref=f4e225]: +import Uploader from 'vue-media-upload'
+    - paragraph [ref=f4e226]: "+import { ref } from 'vue'"
+    - paragraph [ref=f4e227]: "+interface UploadMedia {"
+    - paragraph [ref=f4e228]: "+ name: string"
+    - paragraph [ref=f4e229]: "+ url?: string"
+    - paragraph [ref=f4e230]: "+ size?: number"
+    - paragraph [ref=f4e231]: "+ type?: string"
+    - paragraph [ref=f4e232]: "+}"
+    - paragraph [ref=f4e233]: "+const modelValue = defineModel<string[]>({"
+    - paragraph [ref=f4e234]: "+ default: () => [],"
+    - paragraph [ref=f4e235]: "+})"
+    - paragraph [ref=f4e236]: "+const convertStringToMedia = (str: string[]): UploadMedia[] => {"
+    - paragraph [ref=f4e237]: "+ return str.map((element) => {"
+    - paragraph [ref=f4e238]: "+ return {"
+    - paragraph [ref=f4e239]: "+ name: element,"
+    - paragraph [ref=f4e240]: "+ }"
+    - paragraph [ref=f4e241]: "+ })"
+    - paragraph [ref=f4e242]: "+}"
+    - paragraph [ref=f4e243]: "+const convertMediaToString = (media: UploadMedia[]): string[] => {"
+    - paragraph [ref=f4e244]: "+ const output: string[] = []"
+    - paragraph [ref=f4e245]: "+ media.forEach((element) => {"
+    - paragraph [ref=f4e246]: + output.push(element.name)
+    - paragraph [ref=f4e247]: "+ })"
+    - paragraph [ref=f4e248]: + return output
+    - paragraph [ref=f4e249]: "+}"
+    - paragraph [ref=f4e250]: +const media = ref<UploadMedia[]>(convertStringToMedia(modelValue.value))
+    - paragraph [ref=f4e251]: +const uploadUrl = ref(import.meta.env.VITE_UPLOAD_URL)
+    - paragraph [ref=f4e252]: "+const onChanged = (files: UploadMedia[]): void => {"
+    - paragraph [ref=f4e253]: + modelValue.value = convertMediaToString(files)
+    - paragraph [ref=f4e254]: "+}"
+    - paragraph [ref=f4e255]: +</script>
+    - paragraph [ref=f4e256]: +<template>
+    - paragraph [ref=f4e257]: + <Uploader :server="uploadUrl" @change="onChanged" :media="media"></Uploader>
+    - paragraph [ref=f4e258]: +</template>
+    - paragraph [ref=f4e259]
+    - paragraph [ref=f4e260]: Note that I have create a type for the media to make the typescript support
+    - paragraph [ref=f4e261]
+    - paragraph [ref=f4e262]
+    - paragraph [ref=f4e263]
+    - list [ref=f4e264]:
+      - listitem [ref=f4e265]: You may notice that the component requires the VITE_MEDIA_ROOT_URL as the location of the uploaded server. specify it in the dev.environment file
+    - paragraph [ref=f4e266]: +VITE_UPLOAD_URL=http://localhost:8080/uploadFile
+    - paragraph [ref=f4e267]
+    - list [ref=f4e268]:
+      - listitem [ref=f4e269]: If you install the plugin properly, you will see the warning on the import of the Uploader. This is because the component is not the proper typescript component (as the time I create this lab sheet, I could not find the proper component with the typescript support). However, we can force the IDE to know this type.
+    - paragraph [ref=f4e270]: Create the file name index.d.ts in the root folder and add this content
+    - paragraph [ref=f4e271]: +declare module 'vue-media-upload';
+    - paragraph [ref=f4e272]: then open the env.d.ts and then add this code
+    - paragraph [ref=f4e273]: /// <reference types="vite/client" />
+    - paragraph [ref=f4e274]: +/// <reference types="vue-media-upload" />
+    - paragraph [ref=f4e275]: finally, open the tsconfig.app.json then update the code as given
+    - paragraph [ref=f4e276]: "\"extends\": \"@vue/tsconfig/tsconfig.dom.json\","
+    - paragraph [ref=f4e277]: "- \"include\": [\"env.d.ts\", \"src/**/*\", \"src/**/*.vue\"],"
+    - paragraph [ref=f4e278]: "+ \"include\": [\"env.d.ts\", \"src/**/*\", \"src/**/*.vue\", \"index.d.ts\"],"
+    - paragraph [ref=f4e279]: "\"exclude\": [\"src/**/__tests__/*\"],"
+    - paragraph [ref=f4e280]: now the warning should be gone
+    - paragraph [ref=f4e281]
+    - paragraph [ref=f4e282]
+    - list [ref=f4e283]:
+      - listitem [ref=f4e284]: Update the EventItem type to receive the images list from the upload component, add images to the type Event in the types.ts
+    - paragraph [ref=f4e285]: "date: string"
+    - paragraph [ref=f4e286]: "time: string"
+    - paragraph [ref=f4e287]: "organizer: EventOrganizer"
+    - paragraph [ref=f4e288]: "+ images: string[]"
+    - paragraph [ref=f4e289]: "}"
+    - paragraph [ref=f4e290]
+    - list [ref=f4e291]:
+      - listitem [ref=f4e292]: Update the EventFormView.vue to use the ImageUpload components
+    - paragraph [ref=f4e293]: import OrganizerService from '@/services/OrganizerService'
+    - paragraph [ref=f4e294]: +import ImageUpload from '@/components/ImageUpload.vue';
+    - paragraph [ref=f4e295]: "const event = ref<Event>({"
+    - paragraph [ref=f4e296]: …
+    - paragraph [ref=f4e297]: "location: '',"
+    - paragraph [ref=f4e298]: "date: '',"
+    - paragraph [ref=f4e299]: "time: '',"
+    - paragraph [ref=f4e300]: "- organizer: { id: 0, name: '' }"
+    - paragraph [ref=f4e301]: "+ organizer: { id: 0, name: '' },"
+    - paragraph [ref=f4e302]: "+ images: []"
+    - paragraph [ref=f4e303]: "})"
+    - paragraph [ref=f4e304]: …
+    - paragraph [ref=f4e305]: <h3>Who is your organizer?</h3>
+    - paragraph [ref=f4e306]: <BaseSelect v-model="event.organizer.id" label="Organizer" :options="organizers" />
+    - paragraph [ref=f4e307]: + <h3>The image of the Event</h3>
+    - paragraph [ref=f4e308]: + <ImageUpload v-model="event.images" />
+    - paragraph [ref=f4e309]: <button type="submit">Submit</button>
+    - paragraph [ref=f4e310]: </form>
+    - paragraph [ref=f4e311]: Now try to upload the image. Note that you may see the developer console to see is there any problems or not.
+    - paragraph [ref=f4e312]: update the SupabaseStorageService.java to make the uploadFile more flexible with the image name.
+    - paragraph [ref=f4e313]
+    - list [ref=f4e314]:
+      - listitem [ref=f4e315]: If we get back to the document of the vue-media-upload, the documents said that the return data should be in the specific format. we have to update our backend to conform to the third-party. Update the controller, and the cloud service as given.
+    - paragraph [ref=f4e316]: Create the entity which support the image upload component
+    - paragraph [ref=f4e317]: Create a new java file name StorageFileDto in the util package
+    - paragraph [ref=f4e318]: +package se331.lab.rest.util;
+    - paragraph [ref=f4e319]: +import lombok.Builder;
+    - paragraph [ref=f4e320]: +import lombok.Data;
+    - paragraph [ref=f4e321]: +@Builder
+    - paragraph [ref=f4e322]: +@Data
+    - paragraph [ref=f4e323]: "+public class StorageFileDto {"
+    - paragraph [ref=f4e324]: + String name;
+    - paragraph [ref=f4e325]: "+}"
+    - paragraph [ref=f4e326]
+    - paragraph [ref=f4e327]: add the new methods in the SupabaseStorageService.java
+    - paragraph [ref=f4e328]: "+ public StorageFileDto uploadImage(MultipartFile file) throws ServletException, IOException {"
+    - paragraph [ref=f4e329]: + String fileName = file.getOriginalFilename();
+    - paragraph [ref=f4e330]: "+ if (fileName != null && !fileName.isEmpty() && fileName.contains(\".\")) {"
+    - paragraph [ref=f4e331]: + final String extension = fileName.substring(fileName.lastIndexOf('.') + 1);
+    - paragraph [ref=f4e332]: "+ String[] allowedExt = {\"jpg\", \"jpeg\", \"png\", \"gif\"};"
+    - paragraph [ref=f4e333]: "+ for (String s : allowedExt) {"
+    - paragraph [ref=f4e334]: "+ if (extension.equals(s)) {"
+    - paragraph [ref=f4e335]: + String urlName = this.uploadFile(file);
+    - paragraph [ref=f4e336]: + return StorageFileDto.builder()
+    - paragraph [ref=f4e337]: + .name(urlName)
+    - paragraph [ref=f4e338]: + .build();
+    - paragraph [ref=f4e339]: "+ }"
+    - paragraph [ref=f4e340]: "+ }"
+    - paragraph [ref=f4e341]: + throw new ServletException("file must be an image");
+    - paragraph [ref=f4e342]: "+ }"
+    - paragraph [ref=f4e343]: + return null;
+    - paragraph [ref=f4e344]: +
+    - paragraph [ref=f4e345]: "+ }"
+    - paragraph [ref=f4e346]: then add a new method to the SupabaseController.java
+    - paragraph [ref=f4e347]
+    - paragraph [ref=f4e348]: + @PostMapping("/uploadImage")
+    - paragraph [ref=f4e349]: "+ public ResponseEntity<?> uploadImage(@RequestParam(\"image\") MultipartFile file) {"
+    - paragraph [ref=f4e350]: "+ try {"
+    - paragraph [ref=f4e351]: +
+    - paragraph [ref=f4e352]: + StorageFileDto fileUrl = supabaseStorageService.uploadImage(file);
+    - paragraph [ref=f4e353]: +
+    - paragraph [ref=f4e354]: +
+    - paragraph [ref=f4e355]: +
+    - paragraph [ref=f4e356]: + return ResponseEntity.ok(fileUrl);
+    - paragraph [ref=f4e357]: "+ } catch (Exception e) {"
+    - paragraph [ref=f4e358]: "+ return ResponseEntity.status(500).body(\"Error uploading file: \" + e.getMessage());"
+    - paragraph [ref=f4e359]: "+ }"
+    - paragraph [ref=f4e360]: "+ }"
+    - paragraph [ref=f4e361]
+    - paragraph [ref=f4e362]: now get back to the frontend, update the upload url to the new endpoint
+    - paragraph [ref=f4e363]: +VITE_UPLOAD_URL=http://localhost:8080/uploadImage
+    - paragraph [ref=f4e364]
+    - paragraph [ref=f4e365]: restart all the server, now you should be able to add the file to the component. Show the supabase storage that the file is uploaded.
+    - list [ref=f4e366]:
+      - listitem [ref=f4e367]: Now update the Backend to save the data to our database.
+    - paragraph [ref=f4e368]: update the Event.java to add the images
+    - paragraph [ref=f4e369]: "@ManyToMany(mappedBy = \"eventHistory\")"
+    - paragraph [ref=f4e370]: List<Participant> participants;
+    - paragraph [ref=f4e371]: + @ElementCollection
+    - paragraph [ref=f4e372]: + List<String> images;
+    - paragraph [ref=f4e373]: "}"
+    - paragraph [ref=f4e374]: then update the EventDTO.java to send the events object
+    - paragraph [ref=f4e375]: EventOrganizerDTO organizer;
+    - paragraph [ref=f4e376]: + List<String> images;
+    - paragraph [ref=f4e377]: "}"
+    - paragraph [ref=f4e378]: then update the EventService.ts to add the function to change the key to the url list
+    - paragraph [ref=f4e379]: "+ getEventImages(images: string[]) {"
+    - paragraph [ref=f4e380]: + return Promise.all(
+    - paragraph [ref=f4e381]: + images.map((image) =>
+    - paragraph [ref=f4e382]: + apiClient
+    - paragraph [ref=f4e383]: "+ .get<string>('/presignedUrl', {"
+    - paragraph [ref=f4e384]: "+ params: { key: image },"
+    - paragraph [ref=f4e385]: "+ responseType: 'text',"
+    - paragraph [ref=f4e386]: "+ })"
+    - paragraph [ref=f4e387]: + .then((response) => response.data),
+    - paragraph [ref=f4e388]: + ),
+    - paragraph [ref=f4e389]: + )
+    - paragraph [ref=f4e390]: "+ },"
+    - paragraph [ref=f4e391]
+    - paragraph [ref=f4e392]: Note you may have to rebuild the project for MapStruct to rebuild the mapper
+    - paragraph [ref=f4e393]: update views/event/DetailView.vue in the frontend to show the images after adding a new data
+    - paragraph [ref=f4e394]: add watch to keep updating value when Event is changed
+    - paragraph [ref=f4e395]
+    - paragraph [ref=f4e396]: then update the template to show the result
+    - paragraph [ref=f4e397]: "<p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>"
+    - paragraph [ref=f4e398]: "<p>{{ event.description }}</p>"
+    - paragraph [ref=f4e399]: + <div class="flex flex-row flex-wrap justify-center">
+    - paragraph [ref=f4e400]: + <img v-for="image in event.images" :key="image" :src="image" alt="events image"
+    - paragraph [ref=f4e401]:
+      - generic [ref=f4e402]: + class="border-solid border-gray-200 border-2 rounded p-1 m-1 w-40 hover:shadow-lg" />
+    - paragraph [ref=f4e403]: + </div>
+    - paragraph [ref=f4e404]: </div>
+    - paragraph [ref=f4e405]
+    - paragraph [ref=f4e406]: add a new event in the frontend to show that the details, and images are shown properly in the event details, and show that the data is already in the database.
+    - paragraph [ref=f4e407]
+    - list [ref=f4e408]:
+      - listitem [ref=f4e409]: From the Organizer page you have done earlier.
+    - list [ref=f4e410]:
+      - listitem [ref=f4e411]: create the create Organizer page, which can add the image url to the organizer. note that only 1 image is allowed to be added in the Organizer object.
+      - listitem [ref=f4e412]: Implement the Organizer detail to show the Organizer data and image.

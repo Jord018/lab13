@@ -1,0 +1,29 @@
+- generic [active] [ref=f18e1]:
+  - generic [ref=f18e3]:
+    - banner [ref=f18e4]:
+      - navigation [ref=f18e6]:
+        - link "Event" [ref=f18e7] [cursor=pointer]:
+          - /url: /
+        - text: "|"
+        - link "About" [ref=f18e8] [cursor=pointer]:
+          - /url: /about
+        - text: "|"
+        - link "New Event" [ref=f18e9] [cursor=pointer]:
+          - /url: /add-event
+        - text: "|"
+        - link "Add Organizer" [ref=f18e10] [cursor=pointer]:
+          - /url: /add-organizer
+    - generic [ref=f18e11]:
+      - heading "CAMT" [level=1] [ref=f18e12]
+      - paragraph
+      - heading "Events" [level=3] [ref=f18e13]
+      - list [ref=f18e14]:
+        - listitem [ref=f18e15]:
+          - link "Midterm Exam" [ref=f18e16] [cursor=pointer]:
+            - /url: /event/1
+        - listitem [ref=f18e17]:
+          - link "Commencement Day" [ref=f18e18] [cursor=pointer]:
+            - /url: /event/2
+  - generic [ref=f18e19]:
+    - generic "Toggle devtools panel" [ref=f18e20] [cursor=pointer]
+    - generic "Toggle Component Inspector" [ref=f18e26] [cursor=pointer]

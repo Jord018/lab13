@@ -1,0 +1,4 @@
+[   30534ms] [LOG] events Proxy(Array) @ http://localhost:5173/src/views/EventListView.vue?t=1790403967277:48
+[   30535ms] [LOG] totalEvent 4 @ http://localhost:5173/src/views/EventListView.vue?t=1790403967277:50
+[  240758ms] [LOG] events Proxy(Array) @ http://localhost:5173/src/views/EventListView.vue?t=1790404290188:48
+[  240759ms] [LOG] totalEvent 4 @ http://localhost:5173/src/views/EventListView.vue?t=1790404290188:50

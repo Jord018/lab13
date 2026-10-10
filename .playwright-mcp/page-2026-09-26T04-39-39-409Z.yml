@@ -1,0 +1,54 @@
+- application [ref=e1]:
+  - iframe [aria-hidden] [ref=e2]
+  - iframe [aria-hidden] [ref=e3]
+  - banner "แถบเมนู" [ref=e4]:
+    - generic [ref=e7]:
+      - link "หน้าแรกเอกสาร" [ref=e9] [cursor=pointer]:
+        - /url: https://docs.google.com/document/?usp=docs_web
+      - generic [ref=e16]:
+        - generic "11. Cloud Service-supabase" [ref=e18]:
+          - 'button "สถานะเอกสาร: บันทึกไปยังไดรฟ์แล้ว" [ref=e24]':
+            - generic [ref=e25] [cursor=pointer]: บันทึกไปยังไดรฟ์แล้ว
+        - generic [ref=e32]:
+          - button "ขอรับสิทธิ์แก้ไข. คุณดูเอกสารนี้ได้เพียงอย่างเดียวเท่านั้น คุณต้องลงชื่อเข้าใช้บัญชี Google เพื่อขอสิทธิ์เข้าถึงแบบแก้ไขได้จากเจ้าของ" [disabled] [ref=e34]: ขอรับสิทธิ์แก้ไข
+          - generic [ref=e39]:
+            - button "Chartchai Doungsa-ard" [ref=e40]:
+              - img "Chartchai Doungsa-ard" [ref=e45] [cursor=pointer]
+            - button "ค้างคาวนิรนาม" [ref=e46]:
+              - img "ค้างคาวนิรนาม" [ref=e51] [cursor=pointer]
+            - button "ชินชิลล่านิรนาม" [ref=e52]:
+              - img "ชินชิลล่านิรนาม" [ref=e57] [cursor=pointer]
+          - generic [ref=e58]:
+            - button "แชร์ ทุกคนที่มีลิงก์ ทุกคนที่มีลิงก์สามารถเข้าถึง ไม่จำเป็นต้องลงชื่อเข้าใช้" [disabled] [ref=e59]: แชร์
+            - button "การดำเนินการแชร์อย่างรวดเร็ว" [disabled] [ref=e61]
+          - link "เข้าสู่ระบบ" [ref=e65] [cursor=pointer]:
+            - /url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1UgSswDzsOCC21n5OMMXkGAxi6_PX1JrnpnMtLWnsrWY/edit?tab%3Dt.0&followup=https://docs.google.com/document/d/1UgSswDzsOCC21n5OMMXkGAxi6_PX1JrnpnMtLWnsrWY/edit?tab%3Dt.0&ltmpl=docs&ec=GAZAGQ
+    - menubar [ref=e69]:
+      - menuitem "ไฟล์" [ref=e70] [cursor=pointer]
+      - menuitem "แก้ไข" [ref=e71] [cursor=pointer]
+      - menuitem "ดู" [ref=e72] [cursor=pointer]
+      - menuitem "เครื่องมือ" [ref=e73] [cursor=pointer]
+      - menuitem "ความช่วยเหลือ" [ref=e74] [cursor=pointer]
+  - generic [ref=e77]:
+    - generic [ref=e83]:
+      - button [aria-hidden]
+    - generic "แท็บเอกสาร" [ref=e87]:
+      - button "ซ่อนแท็บและโครงร่าง" [ref=e89] [cursor=pointer]:
+        - button [disabled] [ref=e90]:
+          - button "กลับ" [disabled] [ref=e94]
+      - generic [ref=e100]:
+        - heading "แท็บเอกสาร" [level=2] [ref=e103]
+        - tree "แท็บเอกสาร" [ref=e106]:
+          - generic [ref=e108] [cursor=pointer]:
+            - treeitem "แท็บ 1" [selected] [ref=e109]:
+              - button "ตัวเลือกแท็บ" [ref=e119]
+            - generic [ref=e122]: หัวข้อที่คุณเพิ่มลงในเอกสารจะปรากฏที่นี่
+  - iframe [active] [ref=e125]:
+    - textbox "เนื้อหาเอกสาร" [active] [ref=f1e1]
+    - group
+  - link "เปิดการรองรับโปรแกรมอ่านหน้าจอ" [ref=e126] [cursor=pointer]:
+    - /url: "#"
+  - region [ref=e127]: หากต้องการเปิดการสนับสนุนโปรแกรมอ่านหน้าจอ ให้กด Ctrl+Alt+Z หากต้องการเรียนรู้เกี่ยวกับแป้นพิมพ์ลัด ให้กด Ctrl+เครื่องหมายทับ (/)
+  - generic [ref=e128]: ซ่อนแบนเนอร์แล้ว
+  - region
+  - iframe [ref=e130]

@@ -1,0 +1,43 @@
+- generic [active] [ref=f12e1]:
+  - generic [ref=f12e3]:
+    - banner [ref=f12e4]:
+      - navigation [ref=f12e6]:
+        - link "Event" [ref=f12e7] [cursor=pointer]:
+          - /url: /
+        - text: "|"
+        - link "About" [ref=f12e8] [cursor=pointer]:
+          - /url: /about
+        - text: "|"
+        - link "New Event" [ref=f12e9] [cursor=pointer]:
+          - /url: /add-event
+        - text: "|"
+        - link "Add Organizer" [ref=f12e10] [cursor=pointer]:
+          - /url: /add-organizer
+    - generic [ref=f12e11]:
+      - heading "Create an event" [level=1] [ref=f12e12]
+      - generic [ref=f12e13]:
+        - heading "Name & describe your event" [level=3] [ref=f12e14]
+        - text: Category
+        - textbox "Category" [ref=f12e15]: "[object Object]"
+        - heading "Name & describe your event" [level=3] [ref=f12e16]
+        - text: Title
+        - textbox "Title" [ref=f12e17]
+        - text: Description
+        - textbox "Description" [ref=f12e18]
+        - heading "Where is your event?" [level=3] [ref=f12e19]
+        - text: Location
+        - textbox "Location" [ref=f12e20]
+        - generic [ref=f12e21]: Organizer
+        - combobox [ref=f12e23]:
+          - option "CAMT"
+          - option "CMU"
+          - option "ChiangMai"
+        - heading "The image of the Event" [level=3] [ref=f12e24]
+        - generic [ref=f12e33]:
+          - generic [ref=f12e35] [cursor=pointer]
+          - button [ref=f12e54] [cursor=pointer]
+        - button "Submit" [ref=f12e39]
+      - generic [ref=f12e40]: "{ \"id\": null, \"category\": { \"id\": 0, \"name\": \"\" }, \"title\": \"\", \"description\": \"\", \"location\": \"\", \"date\": \"\", \"time\": \"\", \"petsAllowed\": false, \"organizer\": { \"id\": 0, \"name\": \"\" }, \"images\": [ \"202609261500134-event-list.png\" ] }"
+  - generic [ref=f12e41]:
+    - generic "Toggle devtools panel" [ref=f12e42] [cursor=pointer]
+    - generic "Toggle Component Inspector" [ref=f12e48] [cursor=pointer]

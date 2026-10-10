@@ -1,0 +1,10 @@
+[   24324ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ http://localhost:8081/uploadImage:0
+[   24326ms] [WARNING] [Vue warn]: Unhandled error during execution of native event handler 
+  at <Uploader server="http://localhost:8081/uploadImage" onChange=fn<onChanged> media= []  ... > 
+  at <ImageUpload modelValue= [] onUpdate:modelValue=fn max=1 > 
+  at <OrganizerFormView onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView > 
+  at <App> @ http://localhost:5173/@vite/client:532
+[   24327ms] AxiosError: Request failed with status code 500
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1145ca8f:2078:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1145ca8f:2539:4)

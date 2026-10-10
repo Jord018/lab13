@@ -1,0 +1,46 @@
+- generic [active] [ref=f15e1]:
+  - generic [ref=f15e3]:
+    - banner [ref=f15e4]:
+      - 'heading "You are successfully added a new organizer: SE CAMT Club" [level=4] [ref=f15e52]'
+      - navigation [ref=f15e6]:
+        - link "Event" [ref=f15e7] [cursor=pointer]:
+          - /url: /
+        - text: "|"
+        - link "About" [ref=f15e8] [cursor=pointer]:
+          - /url: /about
+        - text: "|"
+        - link "New Event" [ref=f15e9] [cursor=pointer]:
+          - /url: /add-event
+        - text: "|"
+        - link "Add Organizer" [ref=f15e10] [cursor=pointer]:
+          - /url: /add-organizer
+    - heading "Events For Good" [level=1] [ref=f15e53]
+    - generic [ref=f15e54]:
+      - generic [ref=f15e55]: Search...
+      - textbox "Search..." [ref=f15e56]
+      - link [ref=f15e57] [cursor=pointer]:
+        - /url: /event/1
+        - generic [ref=f15e58]:
+          - heading "Midterm Exam" [level=2] [ref=f15e59]
+          - text: by
+          - heading "CAMT" [level=5] [ref=f15e60]
+          - text: "@Academic on CAMT Building"
+      - link [ref=f15e61] [cursor=pointer]:
+        - /url: /event/2
+        - generic [ref=f15e62]:
+          - heading "Commencement Day" [level=2] [ref=f15e63]
+          - text: by
+          - heading "CAMT" [level=5] [ref=f15e64]
+          - text: "@Academic on CMU Convention hall"
+      - link [ref=f15e65] [cursor=pointer]:
+        - /url: /event/3
+        - generic [ref=f15e66]:
+          - heading "Loy Krathong" [level=2] [ref=f15e67]
+          - text: by
+          - heading "CMU" [level=5] [ref=f15e68]
+          - text: "@Cultural on Ping River"
+      - link "Next Page" [ref=f15e70] [cursor=pointer]:
+        - /url: /?page=2
+  - generic [ref=f15e35]:
+    - generic "Toggle devtools panel" [ref=f15e36] [cursor=pointer]
+    - generic "Toggle Component Inspector" [ref=f15e42] [cursor=pointer]

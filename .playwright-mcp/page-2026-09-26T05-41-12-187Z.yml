@@ -1,0 +1,38 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e3]:
+    - banner [ref=f3e4]:
+      - navigation [ref=f3e6]:
+        - link "Event" [ref=f3e7] [cursor=pointer]:
+          - /url: /
+        - text: "|"
+        - link "About" [ref=f3e8] [cursor=pointer]:
+          - /url: /about
+        - text: "|"
+        - link "New Event" [ref=f3e9] [cursor=pointer]:
+          - /url: /add-event
+        - text: "|"
+        - link "Add Organizer" [ref=f3e10] [cursor=pointer]:
+          - /url: /add-organizer
+    - generic [ref=f3e11]:
+      - heading "Create an event" [level=1] [ref=f3e12]
+      - generic [ref=f3e13]:
+        - heading "Name & describe your event" [level=3] [ref=f3e14]
+        - text: Category
+        - textbox "Category" [ref=f3e15]: "[object Object]"
+        - heading "Name & describe your event" [level=3] [ref=f3e16]
+        - text: Title
+        - textbox "Title" [ref=f3e17]
+        - text: Description
+        - textbox "Description" [ref=f3e18]
+        - heading "Where is your event?" [level=3] [ref=f3e19]
+        - text: Location
+        - textbox "Location" [ref=f3e20]
+        - generic [ref=f3e21]: Organizer
+        - combobox [ref=f3e23]
+        - heading "The image of the Event" [level=3] [ref=f3e24]
+        - generic [ref=f3e35] [cursor=pointer]
+        - button "Submit" [ref=f3e39]
+      - generic [ref=f3e40]: "{ \"id\": null, \"category\": { \"id\": 0, \"name\": \"\" }, \"title\": \"\", \"description\": \"\", \"location\": \"\", \"date\": \"\", \"time\": \"\", \"petsAllowed\": false, \"organizer\": { \"id\": 0, \"name\": \"\" }, \"images\": [] }"
+  - generic [ref=f3e41]:
+    - generic "Toggle devtools panel" [ref=f3e42] [cursor=pointer]
+    - generic "Toggle Component Inspector" [ref=f3e48] [cursor=pointer]

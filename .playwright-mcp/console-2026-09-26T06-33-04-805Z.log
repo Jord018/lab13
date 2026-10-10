@@ -1,0 +1,8 @@
+[     152ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ http://localhost:8081/organizers/999:0
+[  383666ms] [LOG] events Proxy(Array) @ http://localhost:5173/src/views/EventListView.vue?t=1790404290188:48
+[  383666ms] [LOG] totalEvent 4 @ http://localhost:5173/src/views/EventListView.vue?t=1790404290188:50
+[  401446ms] [LOG] 🍍 "event" store installed 🆕 @ http://localhost:5173/node_modules/.vite/deps/pinia.js?v=1145ca8f:3768
+[  403487ms] [LOG] events Proxy(Array) @ http://localhost:5173/src/views/EventListView.vue?t=1790404290188:48
+[  403487ms] [LOG] totalEvent 4 @ http://localhost:5173/src/views/EventListView.vue?t=1790404290188:50
+[  452759ms] [LOG] events Proxy(Array) @ http://localhost:5173/src/views/EventListView.vue?t=1790404290188:48
+[  452759ms] [LOG] totalEvent 4 @ http://localhost:5173/src/views/EventListView.vue?t=1790404290188:50
